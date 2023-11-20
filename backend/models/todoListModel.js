@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const todoSchema = {
+  todoId: {
+    type: String,
+    require: true,
+  },
   title: {
     type: String,
     required: true,

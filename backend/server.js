@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-import TodoRouter from "./routes/todoListRoute";
+import TodoRouter from "./routes/ToDoListRoute.js";
 
 dotenv.config();
 
@@ -15,7 +15,7 @@ app.use(express.json());
 
 mongoose.connect(uri);
 
-app.use("/TodoList", TodoRouter);
+app.use("/", TodoRouter);
 
 app.listen(port, () => {
   console.log(`Server is listening to port ${port}`);
