@@ -55,7 +55,7 @@ const ToDoItem = ({ todoItem, index }) => {
               } text-xl font-mono font-bold max-sm:text-lg text-slate-700`}
               whileHover={{ translateY: "-5px", color: "#f80f80" }}
             >
-              {todoItem.title}
+              {todoItem?.name}
             </motion.p>
           </motion.div>
         </div>

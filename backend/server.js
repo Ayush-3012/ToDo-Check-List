@@ -13,7 +13,17 @@ const uri = process.env.MONGO_URI;
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(uri);
+mongoose
+  .connect(uri)
+  .then((res) =>
+    console.log(
+      "MongoDB Connected : ",
+      res.connection.name,
+      " HOST!!! ",
+      res.connection.host
+    )
+  )
+  .catch((err) => console.log(err));
 
 app.use("/", TodoRouter);
 
